@@ -42,3 +42,8 @@ var panel = {
     force: false // default false - save fields values
   });
 }
+function getOptions(){
+
+  return AdminPanel.getPanelValues(lib.panelName);
+
+}
