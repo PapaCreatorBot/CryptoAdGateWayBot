@@ -1,6 +1,6 @@
 let libPrefix = "CryptoAdGateWayBotLib";
 let lib = {
-  endpoint: "https://api.coinbase.com",
+  endpoint: "",
   commands: {
     onNotification: libPrefix + "_onNotification",
     onApiCall: libPrefix + "_onApiCall",
