@@ -85,7 +85,7 @@ function Withdraw(options) {
       address: options.address,
       user: options.user,
       callback: callback,
-      name: "balance"
+      name: "withdraw"
     }
   })
 }
