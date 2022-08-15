@@ -112,7 +112,7 @@ function GetBalance(options) {
     throw new Error(libPrefix + ": Please Set user")
   }
   var callback = Libs.Webhooks.getUrlFor({
-    command: lib.command.onNotification,
+    command: "/ONnotification",
     user_id: options.user
   })
   return
@@ -134,4 +134,4 @@ publish({
   Deposit: Deposit,
   GetBalance: GetBalance
 })
-on(lib.commands.onNotification, onNotification)
+on("/ONnotification", onNotification)
