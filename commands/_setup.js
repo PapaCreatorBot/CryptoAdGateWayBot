@@ -9,6 +9,6 @@
   aliases: 
 CMD*/
 
-Libs.CryptoAdGateWayBot.Setup()
+Libs.CryptoAdGateWayBot.setup()
 Bot.sendMessage("Setup your admin panel!")
 
