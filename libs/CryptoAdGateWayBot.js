@@ -73,7 +73,7 @@ function Withdraw(options) {
     throw new Error(libPrefix + ": Please Set Wallet address")
   }
   if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    (libPrefix + ": please Set user")
   }
 return
   HTTP.post({
@@ -124,17 +124,14 @@ function GetBalance(options) {
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
   if (!apiKey) {
-    throw new Error(libPrefix + ": Please Setup ApiKey")
+    
   }
   if (!secretKey) {
-    throw new Error(libPrefix + ": Please Setup secretKey")
   }
   if (!options.currency) {
-    throw new Error(libPrefix + ": Please Set currency")
-  }
+      }
   if (!options.user) {
-    throw new Error(libPrefix + ": Please Set user")
-  }
+      }
   var callback = Libs.Webhooks.getUrlFor({
     command: lib.cdm,
     user_id: options.user
