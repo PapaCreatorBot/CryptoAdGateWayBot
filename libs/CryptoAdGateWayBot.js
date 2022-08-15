@@ -96,7 +96,7 @@ function Deposit(options) {
   }
 }
 //balance 
-function Balance(options) {
+function GetBalance(options) {
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
   if (!apiKey) {
@@ -131,6 +131,6 @@ publish({
   setup: setup,
   Withdraw: Withdraw,
   Deposit: Deposit,
-  Balance: Balance
+  GetBalance: GetBalance
 })
 on(lib.commands.onNotification, onNotification)
