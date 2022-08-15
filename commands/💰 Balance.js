@@ -9,9 +9,10 @@
   aliases: 
 CMD*/
 
-var data = Libs.CryptoAdGateWayBot.GetBalance({
+Libs.CryptoAdGateWayBot.GetBalance({
+  api_key: api,
+  secret_key: secret,
   currency: cur,
-  api_key: api_key
+  user: user.id
 })
-//inspect data
-Bot.inspect(data)
+

@@ -9,9 +9,12 @@
   aliases: 
 CMD*/
 
-var data = Libs.CryptoAdGateWayBot.Withdraw({
+Libs.CryptoAdGateWayBot.Withdraw({
+  api_key: api,
+  secret_key: secret,
   currency: cur,
-  api_key: api_key, amount: amount, address: address 
+  amount: amount,
+  address: address,
+  user: user.id
 })
-//inspect data
-Bot.inspect(data)
+

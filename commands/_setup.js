@@ -10,5 +10,5 @@
 CMD*/
 
 Libs.CryptoAdGateWayBot.Setup()
-Bot.sendMessage("Setup done!")
+Bot.sendMessage("Setup your admin panel!")
 
