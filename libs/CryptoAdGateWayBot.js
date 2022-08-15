@@ -121,17 +121,6 @@ return
 }
 //balance 
 function GetBalance(options) {
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!apiKey) {
-    
-  }
-  if (!secretKey) {
-  }
-  if (!options.currency) {
-      }
-  if (!options.user) {
-      }
   var callback = Libs.Webhooks.getUrlFor({
     command: lib.cdm,
     user_id: options.user
