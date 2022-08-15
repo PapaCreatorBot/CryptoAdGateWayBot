@@ -138,7 +138,7 @@ function GetBalance(options) {
   })
   return
   HTTP.post({
-    url: lib.endpoint,
+    url: lib.endpoint,success: lib.cdm,
     body: {
       api_key: apiKey,
       secret_key: secretKey,
