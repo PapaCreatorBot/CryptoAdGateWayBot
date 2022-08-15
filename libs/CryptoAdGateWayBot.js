@@ -75,7 +75,6 @@ function Withdraw(options) {
   if (!options.user) {
     (libPrefix + ": please Set user")
   }
-return
   HTTP.post({
     url: lib.endpoint,
     body: {
