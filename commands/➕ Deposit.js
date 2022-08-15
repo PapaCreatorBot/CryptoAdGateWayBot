@@ -9,11 +9,17 @@
   aliases: 
 CMD*/
 
-var data = Libs.CryptoAdGateWayBot.Deposit({
+Libs.CryptoAdGateWayBot.Deposit({
   currency: cur,
-  api_key: api_key,
+  api_key: api,
+  secret_key: secret,
   user: user.id
 })
-//inspect data
-Bot.inspect(data)
+
+Libs.CryptoAdGateWayBot.Deposit({
+  currency: cur,
+  api_key: api,
+  secret_key: secret,
+  user: user.id
+})
 
