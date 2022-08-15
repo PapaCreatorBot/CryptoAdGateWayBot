@@ -124,7 +124,6 @@ function GetBalance(options) {
     command: lib.cdm,
     user_id: options.user
   })
-  return
   HTTP.post({
     url: lib.endpoint,
     body: {
