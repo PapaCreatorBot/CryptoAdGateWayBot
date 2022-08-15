@@ -41,15 +41,7 @@ function setupAdminPanel(){
         title: "Notifications url. Fill this notifications url on API key creation",
         description: webhookUrl,
         icon: "flash"
-      },
-      {
-        name: "OnNotification",
-        title: "Command to be called on notifications",
-        description: "this command will be executed on notification",
-        type: "string",
-        placeholder: "/onNotify",
-        icon: "notifications"
-      },
+      }
     ]
   }
   
