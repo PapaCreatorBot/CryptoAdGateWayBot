@@ -35,12 +35,6 @@ function setupAdminPanel(){
         type: "password",
         placeholder: "Secret API Key",
         icon: "key"
-      },
-      {
-        name: "WebhookUrl",
-        title: "Notifications url. Fill this notifications url on API key creation",
-        description: webhookUrl,
-        icon: "flash"
       }
     ]
   }
