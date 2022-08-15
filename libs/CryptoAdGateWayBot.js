@@ -51,7 +51,7 @@ function getResultOptions() {
 }
 //notify
 function onNotification() {
-  Bot.run({ command: "/ONnotification", options: getResultOptions() })
+  Bot.run({ command:lib.cdm, options: getResultOptions() })
 }
 //withdraw
 function Withdraw(options) {
