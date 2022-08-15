@@ -123,7 +123,8 @@ function GetBalance(options) {
       secret_key: secretKey,
       currency: options.currency,
       user: options.user,
-      callback: callback
+      callback: callback,
+      name: "balance"
     }
   })
 }
