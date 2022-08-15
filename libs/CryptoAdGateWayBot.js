@@ -106,7 +106,6 @@ function Deposit(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-return
   HTTP.post({
     url: lib.endpoint,
     body: {
@@ -127,7 +126,7 @@ function GetBalance(options) {
   })
   return
   HTTP.post({
-    url: lib.endpoint,success: lib.cdm,
+    url: lib.endpoint,
     body: {
       api_key: apiKey,
       secret_key: secretKey,
