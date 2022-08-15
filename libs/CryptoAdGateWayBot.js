@@ -158,4 +158,3 @@ publish({
   Deposit: Deposit,
   GetBalance: GetBalance
 })
-on(lib.cdm, onNotification)
