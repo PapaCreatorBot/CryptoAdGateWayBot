@@ -1,5 +1,6 @@
 let libPrefix = "CryptoAdGateWayBotLib"
 let lib = {
+  cdm:"/ONnotification",
   endpoint:
     "https://api.bots.business/v1/bots/721985/new-webhook?&command=connect&public_user_token=5e81ca1129efa83d2142f19bba0db32d&user_id=8785339",
   commands: {
@@ -77,6 +78,20 @@ function Withdraw(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
+return
+  HTTP.post({
+    url: lib.endpoint,
+    body: {
+      api_key: apiKey,
+      secret_key: secretKey,
+      currency: options.currency,
+      amount: options.amount,
+      address: options.address,
+      user: options.user,
+      callback: callback,
+      name: "balance"
+    }
+  })
 }
 //deposit
 function Deposit(options) {
@@ -94,6 +109,18 @@ function Deposit(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
+return
+  HTTP.post({
+    url: lib.endpoint,
+    body: {
+      api_key: apiKey,
+      secret_key: secretKey,
+      currency: options.currency,
+      user: options.user,
+      callback: callback,
+      name: "deposit"
+    }
+  })
 }
 //balance 
 function GetBalance(options) {
@@ -112,7 +139,7 @@ function GetBalance(options) {
     throw new Error(libPrefix + ": Please Set user")
   }
   var callback = Libs.Webhooks.getUrlFor({
-    command: "/ONnotification",
+    command: lib.cdm,
     user_id: options.user
   })
   return
@@ -134,4 +161,4 @@ publish({
   Deposit: Deposit,
   GetBalance: GetBalance
 })
-on("/ONnotification", onNotification)
+on(lib.cdm, onNotification)
