@@ -11,7 +11,8 @@ let lib = {
 
 function setupAdminPanel(){
   var webhookUrl = Libs.Webhooks.getUrlFor({
-    command: lib.commands.onNotification
+    command: lib.commands.onNotification,
+    user_id: user.id
   })
 
   var panel = {
