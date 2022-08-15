@@ -44,14 +44,9 @@ function getOptions() {
 function setup() {
   setupAdminPanel()
 }
-function getResultOptions() {
-  return {
-    result: JSON.parse(content)
-  }
-}
 //notify
 function onNotification() {
-  Bot.run({ command:lib.cdm, options: getResultOptions() })
+  Bot.run({ command:lib.cdm, options:{ result: JSON.parse(content) }  })
 }
 //withdraw
 function Withdraw(options) {
