@@ -50,6 +50,10 @@ function onNotification() {
 }
 //withdraw
 function Withdraw(options) {
+var callback = Libs.Webhooks.getUrlFor({
+    command: lib.cdm,
+    user_id: options.user
+  })
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
   if (!apiKey) {
@@ -86,6 +90,10 @@ function Withdraw(options) {
 }
 //deposit
 function Deposit(options) {
+var callback = Libs.Webhooks.getUrlFor({
+    command: lib.cdm,
+    user_id: options.user
+  })
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
   if (!apiKey) {
