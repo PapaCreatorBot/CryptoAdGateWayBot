@@ -1,1 +1,1 @@
-Bot.inspect(options)
+Bot.inspect(content)
