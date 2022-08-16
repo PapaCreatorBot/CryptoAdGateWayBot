@@ -18,3 +18,11 @@ Libs.CryptoAdGateWayBot.Withdraw({
   user: user.id
 })
 
+//Or
+//Libs.CryptoAdGateWayBot.Withdraw({
+//  currency: cur,
+//  amount: amount,
+//  address: address,
+//  user: user.id
+//})
+
