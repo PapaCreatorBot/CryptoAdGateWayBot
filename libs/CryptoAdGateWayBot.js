@@ -2,7 +2,7 @@ let libPrefix = "CryptoAdGateWayBotLib"
 let lib = {
   cdm:"/ONnotification",
   endpoint:
-    "https://api.bots.business/v1/bots/721985/new-webhook?&command=connect&public_user_token=5e81ca1129efa83d2142f19bba0db32d&user_id=8785339",
+    "https://api.bots.business/v1",
   panelName: libPrefix + "Options"
 }
 
@@ -71,7 +71,7 @@ function Withdraw(options) {
     (libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint,
+    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=5e81ca1129efa83d2142f19bba0db32d&user_id=8785339",
     body: {
       api_key: apiKey,
       secret_key: secretKey,
@@ -101,7 +101,7 @@ function Deposit(options) {
     throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint,
+    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=5e81ca1129efa83d2142f19bba0db32d&user_id=8785339",
     body: {
       api_key: apiKey,
       secret_key: secretKey,
@@ -133,7 +133,7 @@ var apiKey = options.api_key || getOptions().APIKey
     throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint,
+    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=5e81ca1129efa83d2142f19bba0db32d&user_id=8785339",
     body: {
       api_key: apiKey,
       secret_key: secretKey,
