@@ -10,14 +10,6 @@
 CMD*/
 
 Libs.CryptoAdGateWayBot.GetBalance({
-  api_key: api,
-  secret_key: secret,
-  currency: cur,
+  currency: "DGB",
   user: user.id
 })
-
-//Or
-//Libs.CryptoAdGateWayBot.GetBalance({
-//  currency: cur,
-//  user: user.id
-//})
