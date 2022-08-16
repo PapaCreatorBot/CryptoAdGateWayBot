@@ -10,19 +10,11 @@
 CMD*/
 
 Libs.CryptoAdGateWayBot.Withdraw({
-  api_key: api,
-  secret_key: secret,
-  currency: cur,
-  amount: amount,
-  address: address,
+  currency: "DGB",
+  amount: "0.006",
+  address: "dgb1qlk3eftxrshrnyy3yx6m2rccdvx872gmcl5gcrs",
   user: user.id
 })
-
-//Or
-//Libs.CryptoAdGateWayBot.Withdraw({
-//  currency: cur,
-//  amount: amount,
-//  address: address,
-//  user: user.id
-//})
+//1. You need to Run /setup
+//2. Setup your API key and secret Key in admin panel
 
