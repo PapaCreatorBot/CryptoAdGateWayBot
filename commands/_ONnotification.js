@@ -1,5 +1,4 @@
 if(!content){return}
-//inspect Bot.inspect(content)
 if (content.deposit) {
   return Bot.run({
     command: "Your command deposit notification",
@@ -18,4 +17,5 @@ if (content.withdraw) {
     options: { result: content }
   })
 }
-
+//Error options
+Bot.inspect(content)
