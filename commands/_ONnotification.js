@@ -1,4 +1,10 @@
 if(!content){return}
+if (content.balance) {
+return Bot.run({
+    command: "Your command check balance",
+    options: { result: content }
+  })
+}
 if (content.deposit) {
   return Bot.run({
     command: "Your command deposit notification",
