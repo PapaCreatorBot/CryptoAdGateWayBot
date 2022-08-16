@@ -46,7 +46,7 @@ function setup() {
 }
 //notify
 function onNotification() {
-  Bot.run({ command:lib.cdm, options: { results:JSON.parse(content) } })
+  Bot.run({ command:lib.cdm, options: JSON.parse(content) })
 }
 //withdraw
 function Withdraw(options) {
