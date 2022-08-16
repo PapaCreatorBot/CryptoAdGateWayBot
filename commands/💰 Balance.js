@@ -16,3 +16,8 @@ Libs.CryptoAdGateWayBot.GetBalance({
   user: user.id
 })
 
+//Or
+//Libs.CryptoAdGateWayBot.GetBalance({
+//  currency: cur,
+//  user: user.id
+//})
