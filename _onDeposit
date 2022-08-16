@@ -1,1 +1,0 @@
-Bot.inspect(options)
