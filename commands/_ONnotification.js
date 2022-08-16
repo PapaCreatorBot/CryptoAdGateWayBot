@@ -4,25 +4,25 @@ if (!content) {
 var json = JSON.parse(content)
 if (json.balance) {
   return Bot.run({
-    command: "onBalance",
+    command: "/onBalance",
     options: { result: JSON.parse(content) }
   })
 }
 if (json.deposit) {
   return Bot.run({
-    command: "onDeposit",
+    command: "/onDeposit",
     options: { result: JSON.parse(content) }
   })
 }
 if (json.address) {
   return Bot.run({
-    command: "onAddress",
+    command: "/onAddress",
     options: { result: JSON.parse(content) }
   })
 }
 if (json.withdraw) {
   return Bot.run({
-    command: "onWithdraw",
+    command: "/onWithdraw",
     options: { result: JSON.parse(content) }
   })
 }
