@@ -1,26 +1,29 @@
-if(!content){return}
-if (content.balance) {
-return Bot.run({
-    command: "Your command check balance",
-    options: { result: content }
+if (!content) {
+  return
+}
+var json = JSON.parse(content)
+if (json.balance) {
+  return Bot.run({
+    command: "onBalance",
+    options: { result: JSON.parse(content) }
   })
 }
-if (content.deposit) {
+if (json.deposit) {
   return Bot.run({
-    command: "Your command deposit notification",
-    options: { result: content }
+    command: "onDeposit",
+    options: { result: JSON.parse(content) }
   })
 }
-if (content.address) {
+if (json.address) {
   return Bot.run({
-    command: "Your command deposit generate address",
-    options: { result: content }
+    command: "onAddress",
+    options: { result: JSON.parse(content) }
   })
 }
-if (content.withdraw) {
+if (json.withdraw) {
   return Bot.run({
-    command: "Your command withdrawals notification",
-    options: { result: content }
+    command: "onWithdraw",
+    options: { result: JSON.parse(content) }
   })
 }
 //Error options
