@@ -1,3 +1,4 @@
+if(!content){return}
 //inspect Bot.inspect(content)
 if (content.deposit) {
   return Bot.run({
