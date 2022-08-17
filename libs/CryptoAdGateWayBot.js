@@ -163,7 +163,7 @@ function onNotification(){
 }
 function GenerateKey(){
 if (!options.user) {
-    throw new Error(libPrefix + ": Please Setup onsuccess")
+    throw new Error(libPrefix + ": Please Setup user")
   }
 }
 publish({
