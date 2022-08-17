@@ -122,6 +122,7 @@ function setup() {
     }
    })
   }
+  //Transfer
   //balance 
   function GetBalance(options) {
   if (!options.success) {
@@ -184,6 +185,7 @@ function setup() {
 }
 publish({
   setup: setup,
+  Transfer: Transfer,
   Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance,
