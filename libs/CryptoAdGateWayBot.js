@@ -161,10 +161,16 @@ function onNotification(){
   if(!content){ return }
   Bot.run({ command: params, options:{ result:JSON.parse(content)} })
 }
+function GenerateKey(){
+if (!options.user) {
+    throw new Error(libPrefix + ": Please Setup onsuccess")
+  }
+}
 publish({
   setup: setup,
   Withdraw: Withdraw,
   Deposit: Deposit,
-  GetBalance: GetBalance
+  GetBalance: GetBalance,
+  GenerateKey: GenerateKey
 })
 on("/"+libPrefix+lib.cdm, onNotification)
