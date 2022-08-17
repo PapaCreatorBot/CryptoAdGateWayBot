@@ -11,7 +11,8 @@ CMD*/
 
 Libs.CryptoAdGateWayBot.Deposit({
   currency: "DGB",
-  user: user.id
+  user: user.id,
+  success: "/onDeposit"
 })
 //1. You need to Run /setup
 //2. Setup your API key and secret Key in admin panel
