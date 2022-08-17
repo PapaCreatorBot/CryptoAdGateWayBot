@@ -161,6 +161,7 @@ function onNotification(){
   if(!content){ return }
   Bot.run({ command: params, options:{ result:JSON.parse(content)} })
 }
+//Generate key
 function GenerateKey(options){
 if (!options.user) {
     throw new Error(libPrefix + ": Please Setup user")
