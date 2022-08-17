@@ -44,10 +44,6 @@ function getOptions() {
 function setup() {
   setupAdminPanel()
 }
-//notify
-function onNotification() {
-  Bot.run({ command:lib.cdm })
-}
 //withdraw
 function Withdraw(options) {
 if (!options.success) {
