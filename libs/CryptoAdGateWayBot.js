@@ -184,7 +184,7 @@ function setup() {
 }
 publish({
   setup: setup,
-  Transfer: Transfer,
+  Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance,
   GenerateKey: GenerateKey
