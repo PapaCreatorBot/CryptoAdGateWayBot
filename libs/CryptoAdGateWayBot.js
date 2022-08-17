@@ -161,7 +161,7 @@ function setup() {
   if(!content){ return }
   Bot.run({ command: params, options:{ result:JSON.parse(content)} })
   }
-  //Generate key
+  //Generate Key and Reset Key
   function GenerateKey(options){
   if (!options.success) {
     throw new Error(libPrefix + ": Please Setup onsuccess")
