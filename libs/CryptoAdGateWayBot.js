@@ -163,7 +163,7 @@ var apiKey = options.api_key || getOptions().APIKey
 }
 function onNotification(){
   if(!content){ return }
-  Bot.run({ command: params, options: JSON.parse(content) })
+  Bot.run({ command: params, options:{ result:JSON.parse(content)} })
 }
 publish({
   setup: setup,
