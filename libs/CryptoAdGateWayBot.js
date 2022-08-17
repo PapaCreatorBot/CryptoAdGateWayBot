@@ -169,7 +169,7 @@ HTTP.post({
     url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
     body: {
       user: options.user,
-      generate: "generate"
+      name: "generate"
     }
   })
 }
