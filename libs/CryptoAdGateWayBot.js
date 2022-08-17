@@ -49,7 +49,7 @@ function Withdraw(options) {
 if (!options.success) {
     throw new Error(libPrefix + ": Please Setup onsuccess")
   }
-var callback = Libs.Webhooks.getUrlFor({
+  var callback = Libs.Webhooks.getUrlFor({
     command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
