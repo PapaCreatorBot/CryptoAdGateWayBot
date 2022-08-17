@@ -1,6 +1,6 @@
 let libPrefix = "CryptoAdGateWayBotLib"
 let lib = {
-  cdm:"/ONnotification",
+  cdm: "Notification",
   endpoint:
     "https://api.bots.business/v1",
   panelName: libPrefix + "Options"
@@ -50,8 +50,11 @@ function onNotification() {
 }
 //withdraw
 function Withdraw(options) {
+if (!options.success) {
+    throw new Error(libPrefix + ": Please Setup onsuccess")
+  }
 var callback = Libs.Webhooks.getUrlFor({
-    command: lib.cdm,
+    command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
   var apiKey = options.api_key || getOptions().APIKey
@@ -90,8 +93,11 @@ var callback = Libs.Webhooks.getUrlFor({
 }
 //deposit
 function Deposit(options) {
+if (!options.success) {
+    throw new Error(libPrefix + ": Please Setup onsuccess")
+  }
 var callback = Libs.Webhooks.getUrlFor({
-    command: lib.cdm,
+    command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
   var apiKey = options.api_key || getOptions().APIKey
@@ -122,8 +128,11 @@ var callback = Libs.Webhooks.getUrlFor({
 }
 //balance 
 function GetBalance(options) {
-  var callback = Libs.Webhooks.getUrlFor({
-    command: lib.cdm,
+  if (!options.success) {
+    throw new Error(libPrefix + ": Please Setup onsuccess")
+  }
+var callback = Libs.Webhooks.getUrlFor({
+    command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
 var apiKey = options.api_key || getOptions().APIKey
@@ -152,9 +161,14 @@ var apiKey = options.api_key || getOptions().APIKey
     }
   })
 }
+function onNotification(){
+  if(!content){ return }
+  Bot.run({ command: params, options: JSON.parse(content) })
+}
 publish({
   setup: setup,
   Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance
 })
+on("/"+libPrefix+lib.cdm, onNotification)
