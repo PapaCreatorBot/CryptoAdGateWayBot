@@ -13,7 +13,8 @@ Libs.CryptoAdGateWayBot.Withdraw({
   currency: "DGB",
   amount: "0.006",
   address: "dgb1qlk3eftxrshrnyy3yx6m2rccdvx872gmcl5gcrs",
-  user: user.id
+  user: user.id,
+  success: "/onWithdraw"
 })
 //1. You need to Run /setup
 //2. Setup your API key and secret Key in admin panel
