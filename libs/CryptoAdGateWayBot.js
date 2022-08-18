@@ -2,7 +2,7 @@ let libPrefix = "CryptoAdGateWayBotLib"
 let lib = {
   cdm: "Notification",
   endpoint:
-    "https://api.bots.business/v1",
+    "https://api.bots.business/v1/bots/721985/new-webhook?&command=connect&public_user_token=603875d9317cc6e6dcd8fd2e21e210e4&user_id=8785339",
   panelName: libPrefix + "Options"
 }
 
@@ -56,8 +56,8 @@ function setup() {
    throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
-    body: {
+    url: lib.endpoint,
+      body: {
       api_key: apiKey,
       secret_key: secretKey,
       currency: options.currency,
@@ -81,7 +81,7 @@ function setup() {
     throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
+    url: lib.endpoint,
     body: {
       api_key: apiKey,
       secret_key: secretKey,
@@ -104,7 +104,7 @@ function setup() {
     throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
+    url: lib.endpoint,
     body: {
       api_key: apiKey,
       secret_key: secretKey,
@@ -131,7 +131,7 @@ function setup() {
     throw new Error(libPrefix + ": please Set user")
   }
   HTTP.post({
-    url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
+    url: lib.endpoint,
     body: {
       api_key: apiKey,
       secret_key: secretKey,
