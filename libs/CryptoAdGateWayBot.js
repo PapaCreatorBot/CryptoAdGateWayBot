@@ -165,9 +165,6 @@ function setup() {
   function GenerateKey(options){
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!apiKey) {
-    throw new Error(libPrefix + ": Please Setup ApiKey")
-  }
   if (!options.success) {
     throw new Error(libPrefix + ": Please Setup onsuccess")
   }
