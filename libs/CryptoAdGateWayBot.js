@@ -46,30 +46,12 @@ function setup() {
 }
 //withdraw
   function Withdraw(options) {
-  if (!options.success) {
-    throw new Error(libPrefix + ": Please Setup onsuccess")
-  }
   var callback = Libs.Webhooks.getUrlFor({
     command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!apiKey) {
-    throw new Error(libPrefix + ": Please Setup ApiKey")
-  }
-  if (!secretKey) {
-    throw new Error(libPrefix + ": Please Setup secretKey")
-  }
-  if (!options.amount) {
-    throw new Error(libPrefix + ": Please Set amount")
-  }
-  if (!options.currency) {
-    throw new Error(libPrefix + ": Please Set currency")
-  }
-  if (!options.address) {
-    throw new Error(libPrefix + ": Please Set Wallet address")
-  }
   if (!options.user) {
    throw new Error(libPrefix + ": please Set user")
   }
@@ -89,24 +71,12 @@ function setup() {
   }
   //deposit
   function Deposit(options) {
-  if (!options.success) {
-    throw new Error(libPrefix + ": Please Setup onsuccess")
-  }
   var callback = Libs.Webhooks.getUrlFor({
     command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!apiKey) {
-    throw new Error(libPrefix + ": Please Setup ApiKey")
-  }
-  if (!secretKey) {
-    throw new Error(libPrefix + ": Please Setup secretKey")
-  }
-  if (!options.currency) {
-    throw new Error(libPrefix + ": Please Set currency")
-  }
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
@@ -124,24 +94,12 @@ function setup() {
   }
   //balance 
   function GetBalance(options) {
-  if (!options.success) {
-    throw new Error(libPrefix + ": Please Setup onsuccess")
-  }
   var callback = Libs.Webhooks.getUrlFor({
     command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!apiKey) {
-    throw new Error(libPrefix + ": Please Setup ApiKey")
-  }
-  if (!secretKey) {
-    throw new Error(libPrefix + ": Please Setup secretKey")
-  }
-  if (!options.currency) {
-    throw new Error(libPrefix + ": Please Set currency")
-  }
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
@@ -165,19 +123,13 @@ function setup() {
   function GenerateKey(options){
   var apiKey = options.api_key || getOptions().APIKey
   var secretKey = options.secret_key || getOptions().SecretAPIKey
-  if (!options.success) {
-    throw new Error(libPrefix + ": Please Setup onsuccess")
-  }
-  if (!options.user) {
-    throw new Error(libPrefix + ": Please Setup user")
-  }
-if (!options.name) {
-    throw new Error(libPrefix + ": Please Setup name like generate/reset")
-  }
   var callback = Libs.Webhooks.getUrlFor({
     command: "/"+libPrefix+lib.cdm+" "+options.success,
     user_id: options.user
   })
+  if (!options.user) {
+    throw new Error(libPrefix + ": please Set user")
+  }
   HTTP.post({
     url: lib.endpoint+"/bots/721985/new-webhook?&command=connect&public_user_token=d31dddf790f86c212487246679171413&user_id=8785339",
     body: {
