@@ -5,7 +5,6 @@ let lib = {
     "https://api.bots.business/v1/bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339",
   panelName: libPrefix + "Options"
 }
-
 function setupAdminPanel() {
   var panel = {
     title: "CryptoAdGateWayBot options",
@@ -31,7 +30,6 @@ function setupAdminPanel() {
       }
     ]
   }
-
   AdminPanel.setPanel({
     panel_name: lib.panelName,
     data: panel,
