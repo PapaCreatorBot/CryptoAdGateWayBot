@@ -2,8 +2,7 @@ let libPrefix = "CryptoAdGateWayBotLib"
 let lib = {
   cdm: "Notification",
   endpoint: "/bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339",
-  url:
-    "https://api.bots.business/v1",
+  url: "https://api.bots.business/v1",
   panelName: libPrefix + "Options"
 }
 function setupAdminPanel() {
