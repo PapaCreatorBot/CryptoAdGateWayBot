@@ -10,7 +10,6 @@
 CMD*/
 
 Libs.CryptoAdGateWayBot.History({
-  histoy_view: "true",
   user: user.id,
   success: "/onHistory"
 })
