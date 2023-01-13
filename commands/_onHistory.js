@@ -1,5 +1,5 @@
 /*CMD
-  command: /setup
+  command: /onHistory
   help: 
   need_reply: 
   auto_retry_time: 
@@ -9,5 +9,4 @@
   aliases: 
 CMD*/
 
-Libs.CryptoAdGateWayBot.setup()
-Bot.sendMessage("Setup your admin panel!")
+Bot.inspect(options)

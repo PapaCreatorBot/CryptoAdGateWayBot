@@ -1,5 +1,5 @@
-# Lib gateway - chat bot
-It is repository for chat bot: [@Lib gateway](https://t.me/Lib gateway)
+# Find_MatchBot - chat bot
+It is repository for chat bot: [@Find_MatchBot](https://t.me/Find_MatchBot)
 
 ## What it is?
 This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.
