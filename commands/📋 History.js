@@ -1,5 +1,5 @@
 /*CMD
-  command: ➖ Withdraw
+  command: 📋 History
   help: 
   need_reply: 
   auto_retry_time: 
@@ -9,12 +9,10 @@
   aliases: 
 CMD*/
 
-Libs.CryptoAdGateWayBot.Withdraw({
-  currency: "DGB",
-  amount: "0.006",
-  address: "dgb1qlk3eftxrshrnyy3yx6m2rccdvx872gmcl5gcrs",
+Libs.CryptoAdGateWayBot.History({
+  histoy_view: "true",
   user: user.id,
-  success: "/onWithdraw"
+  success: "/onHistory"
 })
 //1. You need to Run /setup
 //2. Setup your API key and secret Key in admin panel
