@@ -1,5 +1,5 @@
-# Find_MatchBot - chat bot
-It is repository for chat bot: [@Find_MatchBot](https://t.me/Find_MatchBot)
+# CryptoAdGateWayBot - chat bot
+It is repository for chat bot: [@CryptoAdGateWayBot](https://t.me/CryptoAdGateWayBot)
 
 ## What it is?
 This repository can be imported to [Bots.Business](https://bots.business) as a worked chat bot.
