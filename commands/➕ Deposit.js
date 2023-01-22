@@ -16,3 +16,4 @@ Libs.CryptoAdGateWayBot.Deposit({
 })
 //1. You need to Run /setup
 //2. Setup your API key and secret Key in admin panel
+//3 ksisi
