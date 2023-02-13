@@ -1,1 +1,3 @@
-
+//you will receive complete transfer
+//You can use logic to catch complete transfer
+Bot.inspect(options)
