@@ -161,12 +161,37 @@ function setup() {
     }
   })
 }
+//Transfer
+  function Teansfer(options){
+  var apiKey = options.api_key || getOptions().APIKey
+  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var callback = Libs.Webhooks.getUrlFor({
+    command: "/"+libPrefix+lib.cdm+" "+options.success,
+    user_id: options.user
+  })
+  if (!options.user) {
+    throw new Error(libPrefix + ": please Set user")
+  }
+  HTTP.post({
+    url: lib.url+lib.endpoint,
+    body: {
+      api_key: apiKey,
+      secret_key: secretKey,
+      user: options.user,
+      amount: options.amount,
+      address: options.address,
+      name: "transfer",
+      callback: callback
+    }
+  })
+}
 publish({
   setup: setup,
   Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance,
   GenerateKey: GenerateKey,
-  History: History
+  History: History,
+  Transfer: Transfer
 })
 on("/"+libPrefix+lib.cdm, onNotification)
