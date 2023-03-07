@@ -44,11 +44,8 @@ function setup() {
   setupAdminPanel()
 }
 //HTTP
-function HttpCall(options) {
-  return HTTP.post({
-    url: lib.url + lib.endpoint,
-    body: options
-  })
+function HttpCall(Options) {
+return HTTP.post(Options)
 }
 //withdraw
 function Withdraw(options) {
@@ -62,6 +59,8 @@ function Withdraw(options) {
     throw new Error(libPrefix + ": please Set user")
   }
   HttpCall({
+    url: lib.url + lib.endpoint,
+    body: {
     api_key: apiKey,
     secret_key: secretKey,
     currency: options.currency,
@@ -69,7 +68,7 @@ function Withdraw(options) {
     address: options.address,
     user: options.user,
     callback: callback,
-    name: "withdraw"
+    name: "withdraw"}
   })
 }
 //deposit
@@ -83,13 +82,14 @@ function Deposit(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-  HttpCall({
+  HttpCall({url: lib.url + lib.endpoint,
+    body: {
     api_key: apiKey,
     secret_key: secretKey,
     currency: options.currency,
     user: options.user,
     callback: callback,
-    name: "deposit"
+    name: "deposit"}
   })
 }
 //balance
@@ -103,13 +103,14 @@ function GetBalance(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-  HttpCall({
+  HttpCall({url: lib.url + lib.endpoint,
+    body: {
     api_key: apiKey,
     secret_key: secretKey,
     currency: options.currency,
     user: options.user,
     callback: callback,
-    name: "balance"
+    name: "balance"}
   })
 }
 function onNotification() {
@@ -129,12 +130,13 @@ function GenerateKey(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-  HttpCall({
+  HttpCall({url: lib.url + lib.endpoint,
+    body: {
     api_key: apiKey,
     secret_key: secretKey,
     user: options.user,
     name: options.name,
-    callback: callback
+    callback: callback}
   })
 }
 //History
@@ -148,12 +150,13 @@ function History(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-  HttpCall({
+  HttpCall({url: lib.url + lib.endpoint,
+    body: {
     api_key: piKey,
     secret_key: secretKey,
     user: options.user,
     name: "history",
-    callback: callback
+    callback: callback}
   })
 }
 //Transfer
@@ -168,7 +171,8 @@ function Transfer(options) {
     throw new Error(libPrefix + ": please Set user")
   }
   //call
-  HttpCall({
+  HttpCall({url: lib.url + lib.endpoint,
+    body: {
     api_key: apiKey,
     secret_key: secretKey,
     currency: options.currency,
@@ -176,7 +180,7 @@ function Transfer(options) {
     address: options.address,
     user: options.user,
     callback: callback,
-    name: "withdraw"
+    name: "withdraw"}
   })
 }
 publish({
