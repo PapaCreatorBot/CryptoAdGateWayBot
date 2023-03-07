@@ -1,3 +1,5 @@
-//you will receive complete transfer
-//You can use logic to catch complete transfer
+var error = options.result
+if(error.error){
+return Bot.sendMessage(error.message)
+}
 Bot.inspect(options)
