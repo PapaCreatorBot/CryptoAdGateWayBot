@@ -8,7 +8,6 @@
   keyboard: 
   aliases: 
 CMD*/
-
 Libs.CryptoAdGateWayBot.GetBalance({
   currency: "DGB",
   user: user.id,
