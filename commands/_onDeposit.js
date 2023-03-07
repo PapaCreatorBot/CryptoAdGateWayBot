@@ -9,8 +9,8 @@
   aliases: 
 CMD*/
 
-//you will receive deposit address and complete deposit
-//You can use logic to catch complete deposit
-//var address = options.result.address
-//if(address){return Bot.sendMessage("`"+address+"`")}
+var error = options.result
+if(error.error){
+return Bot.sendMessage(error.message)
+}
 Bot.inspect(options)
