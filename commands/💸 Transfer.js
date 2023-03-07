@@ -12,7 +12,7 @@ CMD*/
 Libs.CryptoAdGateWayBot.Transfer({
   amount: 1,
   currency: "DGB",
-  address: "telegramid"
+  address: "telegramid",
   user: user.id,
   success: "/onTransfer"
 })
