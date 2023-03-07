@@ -43,6 +43,13 @@ function getOptions() {
 function setup() {
   setupAdminPanel()
 }
+//HTTP
+function HttpCall(options) {
+  HTTP.post({
+    url: lib.url + lib.endpoint,
+    body: inspect(options)
+  })
+}
 //withdraw
 function Withdraw(options) {
   var callback = Libs.Webhooks.getUrlFor({
