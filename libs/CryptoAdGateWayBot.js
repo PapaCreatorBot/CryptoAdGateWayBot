@@ -47,7 +47,7 @@ function setup() {
 function HttpCall(options) {
   return HTTP.post({
     url: lib.url + lib.endpoint,
-    body: inspect(options)
+    body: options
   })
 }
 //withdraw
