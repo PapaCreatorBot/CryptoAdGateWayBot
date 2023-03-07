@@ -14,4 +14,3 @@ if(error.error){
 return Bot.sendMessage(error.message)
 }
 Bot.inspect(options)
-
