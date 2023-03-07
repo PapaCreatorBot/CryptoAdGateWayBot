@@ -45,7 +45,7 @@ function setup() {
 }
 //HTTP
 function HttpCall(Options) {
-  return HTTP.post(Options)
+  HTTP.post(Options)
 }
 //withdraw
 function Withdraw(options) {
