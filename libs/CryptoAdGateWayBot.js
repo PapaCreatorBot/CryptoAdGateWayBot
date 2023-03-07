@@ -179,13 +179,6 @@ function Transfer(options) {
     name: "withdraw"
   })
 }
-//HTTP
-function HttpCall(options) {
-  HTTP.post({
-    url: lib.url + lib.endpoint,
-    body: options
-  })
-}
 publish({
   setup: setup,
   Withdraw: Withdraw,
