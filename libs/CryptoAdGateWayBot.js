@@ -45,7 +45,7 @@ function setup() {
 }
 //HTTP
 function HttpCall(options) {
-  HTTP.post({
+  return HTTP.post({
     url: lib.url + lib.endpoint,
     body: inspect(options)
   })
