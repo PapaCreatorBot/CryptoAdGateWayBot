@@ -8,7 +8,6 @@
   keyboard: 
   aliases: 
 CMD*/
-
 Libs.CryptoAdGateWayBot.Withdraw({
   currency: "DGB",
   amount: "0.006",
