@@ -9,5 +9,10 @@
   aliases: 
 CMD*/
 
+var error = options.result
+if(error.error){
+return Bot.sendMessage(error.message)
+}
 Bot.inspect(options)
+
 
