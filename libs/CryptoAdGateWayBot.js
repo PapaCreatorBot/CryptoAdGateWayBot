@@ -40,9 +40,6 @@ function setupAdminPanel() {
 function getOptions() {
   return AdminPanel.getPanelValues(lib.panelName)
 }
-function setup() {
-  setupAdminPanel()
-}
 //HTTP
 function HttpCall(Options) {
   HTTP.post(Options)
@@ -201,7 +198,7 @@ function GetAPIKEY(key,key2) {
     return key2
   }
 publish({
-  setup: setup,
+  setup: setupAdminPanel,
   Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance,
