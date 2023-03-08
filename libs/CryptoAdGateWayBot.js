@@ -54,7 +54,7 @@ function Withdraw(options) {
     user_id: options.user
   })
   var apiKey = getOptions().APIKey || options.api_key
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var secretKey = getOptions().SecretAPIKey || options.secret_key
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
