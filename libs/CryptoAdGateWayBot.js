@@ -53,8 +53,8 @@ function Withdraw(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = getOptions().APIKey || options.api_key
-  var secretKey = getOptions().SecretAPIKey || options.secret_key
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
@@ -78,8 +78,8 @@ function Deposit(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
@@ -101,8 +101,8 @@ function GetBalance(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
@@ -126,8 +126,8 @@ function onNotification() {
 }
 //Generate Key and Reset Key
 function GenerateKey(options) {
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
@@ -148,8 +148,8 @@ function GenerateKey(options) {
 }
 //History
 function History(options) {
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
@@ -170,8 +170,8 @@ function History(options) {
 }
 //Transfer
 function Transfer(options) {
-  var apiKey = options.api_key || getOptions().APIKey
-  var secretKey = options.secret_key || getOptions().SecretAPIKey
+  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
+  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
@@ -194,11 +194,11 @@ function Transfer(options) {
     }
   })
 }
-function GetAPIKEY() {
-  if(){
-    return 
+function GetAPIKEY(key,key2) {
+  if(key){
+    return key
     }
-    return 
+    return key2
   }
 publish({
   setup: setup,
