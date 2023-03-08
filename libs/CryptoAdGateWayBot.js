@@ -53,7 +53,7 @@ function Withdraw(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = options.api_key || getOptions().APIKey
+  var apiKey = getOptions().APIKey || options.api_key
   var secretKey = options.secret_key || getOptions().SecretAPIKey
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
