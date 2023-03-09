@@ -16,9 +16,13 @@ CMD*/
 
 //To generate key you need to pass your user.id
 //To reset key you need to pass your API key and Secret Key
+var api_key = "YOUR API KEY HERE"
+var secret_key = "SECRET KEY HERE"
 var required = message == "generate" || message == "reset"
 if (required) {
   Libs.CryptoAdGateWayBot.GenerateKey({
+api_key:api_key,
+  secret_key: secret_key,
     user: user.id,
     name: message,
     success: "/onGenerate"
