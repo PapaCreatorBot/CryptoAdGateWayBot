@@ -145,7 +145,6 @@ function onNotification() {
   Bot.run({ command: params, options: { result: JSON.parse(content) } })
 }
 publish({
-  setup: setupAdminPanel,
   Withdraw: Withdraw,
   Deposit: Deposit,
   GetBalance: GetBalance,
