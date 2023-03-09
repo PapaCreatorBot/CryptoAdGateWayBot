@@ -3,42 +3,7 @@ let lib = {
   cdm: "Notification",
   endpoint:
     "bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339",
-  url: "https://api.bots.business/v1/",
-  panelName: libPrefix
-}
-function setupAdminPanel() {
-  var panel = {
-    title: "CryptoAdGateWayBot options",
-    description: "Options for CryptoAdGateWayBot Lib",
-    icon: "logo-bitcoin",
-
-    fields: [
-      {
-        name: "APIKey",
-        title: "API Key",
-        description: "you can get your API key in @CryptoAdGateWayBot",
-        type: "password",
-        placeholder: "API Key",
-        icon: "key"
-      },
-      {
-        name: "SecretAPIKey",
-        title: "Secret API Key",
-        description: "you can get your Secret API key in @CryptoAdGateWayBot",
-        type: "password",
-        placeholder: "Secret API Key",
-        icon: "key"
-      }
-    ]
-  }
-  AdminPanel.setPanel({
-    panel_name: lib.panelName,
-    data: panel,
-    force: false // default false - save fields values
-  })
-}
-function getOptions() {
-  return AdminPanel.getPanelValues(lib.panelName)
+  url: "https://api.bots.business/v1/"
 }
 //HTTP
 function HttpCall(Options) {
@@ -50,16 +15,14 @@ function Withdraw(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
-  if (!options.user) {
+   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       currency: options.currency,
       amount: options.amount,
       address: options.address,
@@ -75,16 +38,14 @@ function Deposit(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
-  if (!options.user) {
+    if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       currency: options.currency,
       user: options.user,
       callback: callback,
@@ -98,16 +59,14 @@ function GetBalance(options) {
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
-  if (!options.user) {
+    if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       currency: options.currency,
       user: options.user,
       callback: callback,
@@ -115,17 +74,9 @@ function GetBalance(options) {
     }
   })
 }
-function onNotification() {
-  if (!content) {
-    return
-  }
-  Bot.run({ command: params, options: { result: JSON.parse(content) } })
-}
 //Generate Key and Reset Key
 function GenerateKey(options) {
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
-  var callback = Libs.Webhooks.getUrlFor({
+    var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
@@ -135,8 +86,8 @@ function GenerateKey(options) {
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       user: options.user,
       name: options.name,
       callback: callback
@@ -145,9 +96,7 @@ function GenerateKey(options) {
 }
 //History
 function History(options) {
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
-  var callback = Libs.Webhooks.getUrlFor({
+    var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
   })
@@ -157,8 +106,8 @@ function History(options) {
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       user: options.user,
       name: "history",
       callback: callback
@@ -167,8 +116,6 @@ function History(options) {
 }
 //Transfer
 function Transfer(options) {
-  var apiKey = GetAPIKEY(options.api_key,getOptions().APIKey)
-  var secretKey = GetAPIKEY(options.secret_key,getOptions().SecretAPIKey)
   var callback = Libs.Webhooks.getUrlFor({
     command: "/" + libPrefix + lib.cdm + " " + options.success,
     user_id: options.user
@@ -176,12 +123,11 @@ function Transfer(options) {
   if (!options.user) {
     throw new Error(libPrefix + ": please Set user")
   }
-  //call
   HttpCall({
     url: lib.url + lib.endpoint,
     body: {
-      api_key: apiKey,
-      secret_key: secretKey,
+      api_key: options.api_key,
+      secret_key: options.secret_key,
       currency: options.currency,
       amount: options.amount,
       address: options.address,
@@ -191,12 +137,13 @@ function Transfer(options) {
     }
   })
 }
-function GetAPIKEY(key,key2) {
-  if(key){
-    return key
-    }
-    return key2
+//Notify
+function onNotification() {
+  if (!content) {
+    return
   }
+  Bot.run({ command: params, options: { result: JSON.parse(content) } })
+}
 publish({
   setup: setupAdminPanel,
   Withdraw: Withdraw,
