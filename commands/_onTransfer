@@ -1,0 +1,5 @@
+var error = options.result.error
+if (error) {
+  return Bot.sendMessage(options.result.error.message)
+}
+Bot.inspect(options)
