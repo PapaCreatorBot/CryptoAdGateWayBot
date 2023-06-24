@@ -2,7 +2,7 @@
 
 ## HOW TO USE
 
-1. Install Lib using admin command "`/libs 36995`" for default: "`/libs`"
+1. Install Lib using admin command "`/libs 36997`" for default: "`/libs`"
 2. Make command example: balance
 
 CODE:
