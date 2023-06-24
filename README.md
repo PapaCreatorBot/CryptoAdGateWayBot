@@ -21,6 +21,16 @@ Libs.CryptoAdGateWayBot.GetBalance({
 ```
 
 on "/onBalance" command receive data
+CODE inspecting data:
+```javascript 
+Bot.inspect(content)
+```
+CODE parse JSON data:
+```javascript
+var data = JSON.parse(content)
+//example: var balance= data.balance
+```
+
 
 # Can be used
 
