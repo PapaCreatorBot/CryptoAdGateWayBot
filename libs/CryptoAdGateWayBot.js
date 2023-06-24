@@ -10,7 +10,7 @@ function HttpCall(Options) {
 //withdraw
 function Withdraw(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+options.success,
+    command: "/#onNotify "+options.success,
     user_id: options.user
   })
    if (!options.user) {
@@ -33,7 +33,7 @@ function Withdraw(options) {
 //deposit
 function Deposit(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+options.success,
+    command: "/#onNotify "+options.success,
     user_id: options.user
   })
     if (!options.user) {
@@ -55,7 +55,7 @@ return
 //balance
 function GetBalance(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+options.success,
+    command: "/#onNotify "+options.success,
     user_id: options.user
   })
     if (!options.user) {
@@ -77,7 +77,7 @@ return
 //Generate Key and Reset Key
 function GenerateKey(options) {
     var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+ options.success,
+    command: "/#onNotify "+ options.success,
     user_id: options.user
   })
   if (!options.user) {
@@ -98,7 +98,7 @@ Api.sendMessage({ text:libPrefix + ": please Set user"})
 //History
 function History(options) {
     var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+options.success,
+    command: "/#onNotify "+options.success,
     user_id: options.user
   })
   if (!options.user) {
@@ -119,7 +119,7 @@ return
 //Transfer
 function Transfer(options) {
  var callback = Libs.Webhooks.getUrlFor({
-    command: "#onNotify "+options.success,
+    command: "/#onNotify "+options.success,
     user_id: options.user
   })
   if (!options.user) {
