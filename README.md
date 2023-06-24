@@ -1,1 +1,3 @@
 # CryptoAdGateWayBot
+
+## How to use
