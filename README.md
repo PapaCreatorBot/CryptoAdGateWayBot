@@ -22,6 +22,6 @@ Libs.CryptoAdGateWayBot.GetBalance({
 
 on "/onBalance" command receive data
 
-# CryptoAdGateWayBot Can be used
+# Can be used
 
 `Withdraw`,`Deposit`,`GetBalance`,`GenerateKey`,`History`,`Transfer`
