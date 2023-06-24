@@ -1,8 +1,7 @@
 var libPrefix = "CryptoAdGateWayBotLib"
 var lib = {
   endpoint:
-    "bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339",
-  url: "https://api.bots.business/v1/"
+    "https://api.bots.business/v1/bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339"
 }
 //HTTP
 function HttpCall(Options) {
@@ -18,7 +17,7 @@ function Withdraw(options) {
     Api.sendMessage({ text:libPrefix + ": please Set user"})
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
@@ -42,7 +41,7 @@ function Deposit(options) {
 return 
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
@@ -64,7 +63,7 @@ function GetBalance(options) {
 return
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
@@ -78,7 +77,7 @@ return
 //Generate Key and Reset Key
 function GenerateKey(options) {
     var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+    command: "#onNotify "+ options.success,
     user_id: options.user
   })
   if (!options.user) {
@@ -86,7 +85,7 @@ Api.sendMessage({ text:libPrefix + ": please Set user"})
     return 
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
@@ -107,7 +106,7 @@ function History(options) {
 return 
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
@@ -128,7 +127,7 @@ function Transfer(options) {
 return 
   }
   HttpCall({
-    url: lib.url + lib.endpoint,
+    url: lib.endpoint,
     body: {
       api_key: options.api_key,
       secret_key: options.secret_key,
