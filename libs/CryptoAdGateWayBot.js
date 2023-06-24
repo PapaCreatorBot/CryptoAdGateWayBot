@@ -123,7 +123,7 @@ function Transfer(options) {
     user_id: options.user
   })
   if (!options.user) {
-    Api.sendMessage({ text:libPrefix + ": please Set user"})
+    Api.sendMessage({ text: libPrefix + ": please Set user"})
 return 
   }
   HttpCall({
