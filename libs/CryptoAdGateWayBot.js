@@ -1,6 +1,5 @@
-let libPrefix = "CryptoAdGateWayBotLib"
-let lib = {
-  cdm: "Notification",
+var libPrefix = "CryptoAdGateWayBotLib"
+var lib = {
   endpoint:
     "bots/725421/new-webhook?&command=connect&public_user_token=919138ec0afd896221a03ef2bd840a27&user_id=8785339",
   url: "https://api.bots.business/v1/"
@@ -12,11 +11,11 @@ function HttpCall(Options) {
 //withdraw
 function Withdraw(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+    command: "#onNotify "+options.success,
     user_id: options.user
   })
    if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    Api.sendMessage({ text:libPrefix + ": please Set user"})
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -35,11 +34,12 @@ function Withdraw(options) {
 //deposit
 function Deposit(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+    command: "#onNotify "+options.success,
     user_id: options.user
   })
     if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    Api.sendMessage({ text:libPrefix + ": please Set user"})
+return 
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -56,11 +56,12 @@ function Deposit(options) {
 //balance
 function GetBalance(options) {
   var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+    command: "#onNotify "+options.success,
     user_id: options.user
   })
     if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    Api.sendMessage({ text:libPrefix + ": please Set user"})
+return
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -81,7 +82,8 @@ function GenerateKey(options) {
     user_id: options.user
   })
   if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+Api.sendMessage({ text:libPrefix + ": please Set user"})
+    return 
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -97,11 +99,12 @@ function GenerateKey(options) {
 //History
 function History(options) {
     var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+    command: "#onNotify "+options.success,
     user_id: options.user
   })
   if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    Api.sendMessage({ text:libPrefix + ": please Set user"})
+return 
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -116,12 +119,13 @@ function History(options) {
 }
 //Transfer
 function Transfer(options) {
-  var callback = Libs.Webhooks.getUrlFor({
-    command: "/" + libPrefix + lib.cdm + " " + options.success,
+ var callback = Libs.Webhooks.getUrlFor({
+    command: "#onNotify "+options.success,
     user_id: options.user
   })
   if (!options.user) {
-    throw new Error(libPrefix + ": please Set user")
+    Api.sendMessage({ text:libPrefix + ": please Set user"})
+return 
   }
   HttpCall({
     url: lib.url + lib.endpoint,
@@ -137,13 +141,6 @@ function Transfer(options) {
     }
   })
 }
-//Notify
-function onNotification() {
-  if (!content) {
-    return
-  }
-  Bot.run({ command: params, options: { result: JSON.parse(content) } })
-}
 publish({
   Withdraw: Withdraw,
   Deposit: Deposit,
@@ -152,4 +149,3 @@ publish({
   History: History,
   Transfer: Transfer
 })
-on("/" + libPrefix + lib.cdm, onNotification)
