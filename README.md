@@ -3,9 +3,10 @@
 ## HOW TO USE
 
 1. Install Lib using admin command "`/libs 367003`" for default: "`/libs`"
+
 2. Make command example: balance
 
-CODE:
+**CODE**:
 ```javascript
 var api_key = "YOUR API KEY HERE"
 var secret_key = "SECRET KEY HERE"
@@ -21,11 +22,12 @@ Libs.CryptoAdGateWayBot.GetBalance({
 ```
 
 on "/onBalance" command receive data
-CODE inspecting data:
+
+**CODE inspecting data**:
 ```javascript 
 Bot.inspect(content)
 ```
-CODE parse JSON data:
+**CODE parse JSON data**:
 ```javascript
 var data = JSON.parse(content)
 //example: var balance= data.balance
