@@ -36,4 +36,6 @@ var data = JSON.parse(content)
 
 # Can be used
 
+`Libs.CryptoAdGateWayBot`
+
 `Withdraw`,`Deposit`,`GetBalance`,`GenerateKey`,`History`,`Transfer`
